@@ -1,0 +1,86 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+}
+
+.container {
+    width: 80%;
+    margin: 50px auto;
+}
+
+.accord ul {
+    list-style: none;
+}
+
+.accord .title {
+    background-color: green;
+    padding: 15px 30px;
+    color: #fff;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    transition: 1s;
+}
+
+.accord .title:hover {
+    background-color: darkgreen;
+    cursor: pointer;
+}
+
+.accord .content {
+    /* display: none; */
+    visibility: hidden;
+
+    height: 0;
+    overflow: hidden;
+
+    transition: 1s;
+}
+
+.accord i {
+    width: 10px;
+    height: 3px;
+    background-color: #fff;
+    display: inline-block;
+    transform: rotate(45deg);
+    position: relative;
+
+    transition: 1s;
+}
+
+.accord i::after {
+    content: '';
+    width: 10px;
+    height: 3px;
+    background-color: #fff;
+    display: inline-block;
+    transform: rotate(90deg);
+    position: absolute;
+    left: 4px;
+    top: -4px;
+}
+
+.accord .active > .content {
+    /* display: block; */
+    visibility: visible;
+
+    height: 100px;
+    padding: 15px 30px;
+    border: 3px solid darkgreen;
+}
+
+.accord .active > .title {
+    background-color: darkgreen;
+}
+
+.accord .active > .title > i {
+    transform: rotate(225deg);
+}
+
